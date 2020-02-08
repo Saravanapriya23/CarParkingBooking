@@ -1,4 +1,4 @@
-﻿ <%@ Page Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="CarParkingBooking.SignUp" %>
+﻿ <%@ Page Language="C#" MasterPageFile="~/Home.Master" trace="false" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="CarParkingBooking.SignUp" %>
 
 <asp:Content ID="SignUp" runat="server" ContentPlaceHolderID="head">
     <marquee behavior="scroll" direction="right" scrollamount="40"><h1><b>WELCOME TO SABARI PARKING SITE </b></h1></marquee>

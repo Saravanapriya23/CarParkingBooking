@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace CarParkingBooking
@@ -21,29 +16,45 @@ namespace CarParkingBooking
         }
         void PopulateGridView()
         {
-            DataTable datatable = new DataTable();
-            using (SqlConnection con=new SqlConnection(connectionString))
-            {
-                con.Open();
-                SqlDataAdapter dataadapter = new SqlDataAdapter("Select siteName,location,emailId,parkingSlots FROM CarParkingSiteDetails",con);
-                dataadapter.Fill(datatable);
-            }
-            if(datatable.Rows.Count>0)
-            {
-                gvCarParkingSiteDetails.DataSource = datatable;
-                gvCarParkingSiteDetails.DataBind();
-            }
-            else
-            {
-                datatable.Rows.Add(datatable.NewRow());
-                gvCarParkingSiteDetails.DataSource = datatable;
-                gvCarParkingSiteDetails.DataBind();
-                gvCarParkingSiteDetails.Rows[0].Cells.Clear();
-                gvCarParkingSiteDetails.Rows[0].Cells.Add(new TableCell());
-                gvCarParkingSiteDetails.Rows[0].Cells[0].ColumnSpan = datatable.Columns.Count;
-                gvCarParkingSiteDetails.Rows[0].Cells[0].Text="No Data Found...!!";
-                gvCarParkingSiteDetails.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
-            }
+            DataTable table = AdminRepository.ViewParkingSiteDetails();
+            gvCarParkingSiteDetails.DataSource = table;
+            gvCarParkingSiteDetails.DataBind();
+        }
+        protected void gvCarParkingSiteDetails_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            gvCarParkingSiteDetails.EditIndex = -1;
+            PopulateGridView();
+        }
+
+        protected void gvCarParkingSiteDetails_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int carserialNo = Convert.ToInt16(gvCarParkingSiteDetails.DataKeys[e.RowIndex].Values["serialNo"].ToString());
+            AdminRepository.DeleteParkingSiteDetails(carserialNo);
+            PopulateGridView();
+        }
+
+        protected void gvCarParkingSiteDetails_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+
+            gvCarParkingSiteDetails.EditIndex = e.NewEditIndex;
+            PopulateGridView();
+        }
+
+        protected void gvCarParkingSiteDetails_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            int carserialNo = Convert.ToInt16(gvCarParkingSiteDetails.DataKeys[e.RowIndex].Values["serialNo"].ToString());
+            TextBox siteName = gvCarParkingSiteDetails.Rows[e.RowIndex].FindControl("txtsitetName") as TextBox;
+            string carParkingSiteName = siteName.Text;
+            TextBox location = gvCarParkingSiteDetails.Rows[e.RowIndex].FindControl("txtlocation") as TextBox;
+            string carParkingLocation = location.Text;
+            TextBox emailId = gvCarParkingSiteDetails.Rows[e.RowIndex].FindControl("txtemailId") as TextBox;
+            string carParkingSiteEmailId = emailId.Text;
+            TextBox parkingslots = gvCarParkingSiteDetails.Rows[e.RowIndex].FindControl("txtparkingSlots") as TextBox;
+            string parkingSlots = parkingslots.Text;
+            int carParkingSlots = Convert.ToInt16((parkingSlots.ToString()));
+            AdminRepository.UpdateParkingSiteDetails(carserialNo, carParkingSiteName, carParkingLocation, carParkingSiteEmailId,carParkingSlots);
+            gvCarParkingSiteDetails.EditIndex = -1;
+            PopulateGridView();
         }
     }
 }
