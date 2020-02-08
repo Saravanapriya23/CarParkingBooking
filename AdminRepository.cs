@@ -48,13 +48,12 @@ namespace CarParkingBooking
                 connection.Close();
             }
         }
-        public static void InsertParkingSiteDetails(int serialNo, string siteName, string location, string emailId, int parkingSlots)
+        public static void InsertParkingSiteDetails(string siteName, string location, string emailId, int parkingSlots)
         {
             string procedure = "spCARPARKINGSITEDETAILS_INSERT";
             using (SqlCommand command = new SqlCommand(procedure, connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@serialno", serialNo);
                 command.Parameters.AddWithValue("@sitename", siteName);
                 command.Parameters.AddWithValue("@location", location);
                 command.Parameters.AddWithValue("@emailid", emailId);
