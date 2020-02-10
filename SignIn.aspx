@@ -3,17 +3,9 @@
  <asp:Content ID="contentHead" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
 
 <body style="background-color:palegoldenrod">
-    <style>
-body {
-  background-image: url('Car1.jfif');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-}
-        </style>
-
         <div>
             <h1 style="text-align: center"><b>WELCOME TO SABARI CAR PARKING SITE</b></h1>
+            <h2 style="text-align: center"><i>Park Before Arrival!!</i></h2>
             <h4 style="text-align:center"><i>LOGIN TO SABARI PARKING SITE</i></h4>
             <table align="Center">
                 <tr>

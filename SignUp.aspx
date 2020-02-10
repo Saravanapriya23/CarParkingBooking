@@ -2,10 +2,10 @@
 
 <asp:Content ID="SignUp" runat="server" ContentPlaceHolderID="head">
     <marquee behavior="scroll" direction="right" scrollamount="40"><h1><b>WELCOME TO SABARI PARKING SITE </b></h1></marquee>
-</asp:Content>
-<asp:Content ID="contentHead" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
-
+    <h2 style="text-align: center"><i>Park Before Arrival!!</i></h2>
     <link rel="stylesheet" type="text/css" href="Styles.css" />
+</asp:Content>
+<asp:Content ID="content" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
     <table class="a">
         <tr>
             <td>First Name</td>

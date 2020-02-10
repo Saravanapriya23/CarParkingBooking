@@ -1,11 +1,11 @@
-﻿b.body {
-    background-image: url('CarParking2.jpg');
+﻿body {
+    background-image: url('Car1.jfif');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
 }
 
-a.body .b {
+#content {
     background-image: url('Car1.jfif');
     background-repeat: no-repeat;
     background-attachment: fixed;
