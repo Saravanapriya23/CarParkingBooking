@@ -1,4 +1,6 @@
 ﻿using System;
+using CarParkingBooking.DAL;
+using CarParkingBooking.ENTITY;
 namespace CarParkingBooking
 {
     public partial class UserLogin : System.Web.UI.Page
@@ -9,10 +11,9 @@ namespace CarParkingBooking
         }
         protected void SignIn_Click(object sender, EventArgs e)
         {
-            string username = txtUserId.Text;
-            string password = txtPassword.Text;
+            UserEntitySignIn userEntitySignIn = new UserEntitySignIn(txtUserId.Text, txtPassword.Text);
             UserRepository user = new UserRepository();
-            bool isValid = user.ValidateLogin(username, password);
+            bool isValid = user.ValidateLogin(userEntitySignIn);
             if (isValid)
                 Response.Write("Sign in successfully completed");
             else

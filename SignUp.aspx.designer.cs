@@ -69,22 +69,13 @@ namespace CarParkingBooking
         protected global::System.Web.UI.WebControls.RegularExpressionValidator rgvName;
 
         /// <summary>
-        /// rdoMale control.
+        /// rbGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdoMale;
-
-        /// <summary>
-        /// rdoFemale control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdoFemale;
+        protected global::System.Web.UI.WebControls.RadioButtonList rbGender;
 
         /// <summary>
         /// txtMobileNumber control.

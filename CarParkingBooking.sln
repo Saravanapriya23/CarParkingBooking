@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarParkingBooking", "CarParkingBooking.csproj", "{2AB11652-2FC0-4A11-93B0-1EF952BAA1FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarParkingBooking.DAL", "..\CarParkingBooking.DAL\CarParkingBooking.DAL.csproj", "{8E392AE1-1E60-4672-8739-28097FCF0247}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarParkingBooking.DAL", "..\CarParkingBooking.DAL\CarParkingBooking.DAL.csproj", "{8E392AE1-1E60-4672-8739-28097FCF0247}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarParkingBooking.BL", "..\CarParkingBooking.BL\CarParkingBooking.BL.csproj", "{C3830739-E9AF-40D3-BB22-E72706F238EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarParkingBooking.BL", "..\CarParkingBooking.BL\CarParkingBooking.BL.csproj", "{C3830739-E9AF-40D3-BB22-E72706F238EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarParkingBooking.Common", "..\CarParkingBooking.Common\CarParkingBooking.Common.csproj", "{A9826B19-550D-409C-97FC-6C6BF121165C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarParkingBooking.Common", "..\CarParkingBooking.Common\CarParkingBooking.Common.csproj", "{A9826B19-550D-409C-97FC-6C6BF121165C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarParkingBooking.ENTITY", "..\CarParkingBooking.ENTITY\CarParkingBooking.ENTITY.csproj", "{6F83AEF8-726B-4264-B785-77B3A0D0791F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarParkingBooking.ENTITY", "..\CarParkingBooking.ENTITY\CarParkingBooking.ENTITY.csproj", "{6F83AEF8-726B-4264-B785-77B3A0D0791F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
